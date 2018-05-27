@@ -37,11 +37,10 @@
 input {
     border-radius: 20px;
     border: 2px solid #3A5570;
-    width: 400px;
+    width: 300px;
     height: 30px;
     text-align: center;
 }
-
 
 .keyInput {
     border-radius: 20px;
@@ -58,10 +57,15 @@ input {
     line-height: 50px;
     border: 2px solid #3A5570;
 }
+.VoteTable {
+    width: 400px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*a 속성 폰트 색깔 나중에는 흰색으로 바꾸자*/
-
-a:hover,a:link, a:visited, a:active {
+a:hover, a:link, a:visited, a:active {
     text-decoration: none;
     color: white;
 }

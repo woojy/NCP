@@ -8,14 +8,31 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Vote</title>
+    <title>result</title>
     <link rel="stylesheet" href="~/StyleSheet1.css" />
 
 </head>
 <body>
-    <div> 
-        투표화면입니다.
+    <div>투표화면</div>
+    <table class="VoteTable">
+        <tr>
+            <td>
+                <img src="~/h1.jpg" alt="후보1 사진" style="margin-right:250px" width="200" height="200"/></td>
+            <td>
+                <img src="~/h2.jpg" alt="후보2 사진" style="margin-right:250px"  width="200" height="200"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="check" style="align-content:center;"/>
+            </td>
 
-    </div>
+            <td>
+                <input type="radio" name="check" />
+            </td>
+        </tr>
+        
+    </table>
+    <input type="submit" value="투표하기" />
 </body>
 </html>

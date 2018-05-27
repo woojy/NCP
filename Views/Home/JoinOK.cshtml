@@ -19,8 +19,12 @@
         <p>정보확입니다</p><br />
         <p> 이름 : @Model.name </p><br />
         <p> 학과 : @Model.major </p><br />
-        <p> 공약 : @Model.promise</p><br />
-        <a href="@Url.Action("","")">Home</a>
+        <p> 공약</p><br />
+        @Model.promise1<br />
+        @Model.promise2<br />
+        @Model.promise3<br />
+        <br />
+        <a href="@Url.Action("Admin","")">뒤로가기</a>
     </div>
 </body>
 </html>

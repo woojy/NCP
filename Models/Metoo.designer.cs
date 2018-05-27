@@ -30,12 +30,12 @@ namespace metoo.Models
 		
     #region 확장성 메서드 정의
     partial void OnCreated();
-    partial void Insertregistration(registration instance);
-    partial void Updateregistration(registration instance);
-    partial void Deleteregistration(registration instance);
     partial void Insertpassword(password instance);
     partial void Updatepassword(password instance);
     partial void Deletepassword(password instance);
+    partial void Insertregistration(registration instance);
+    partial void Updateregistration(registration instance);
+    partial void Deleteregistration(registration instance);
     #endregion
 		
 		public MetooDataContext() : 
@@ -68,14 +68,6 @@ namespace metoo.Models
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<registration> registration
-		{
-			get
-			{
-				return this.GetTable<registration>();
-			}
-		}
-		
 		public System.Data.Linq.Table<student> student
 		{
 			get
@@ -91,210 +83,12 @@ namespace metoo.Models
 				return this.GetTable<password>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.registration")]
-	public partial class registration : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _name;
-		
-		private string _major;
-		
-		private string _promise;
-		
-		private System.Nullable<int> _count;
-		
-		private System.Data.Linq.Binary _ImageFile;
-		
-		private int _ImageSize;
-		
-    #region 확장성 메서드 정의
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void OnmajorChanging(string value);
-    partial void OnmajorChanged();
-    partial void OnpromiseChanging(string value);
-    partial void OnpromiseChanged();
-    partial void OncountChanging(System.Nullable<int> value);
-    partial void OncountChanged();
-    partial void OnImageFileChanging(System.Data.Linq.Binary value);
-    partial void OnImageFileChanged();
-    partial void OnImageSizeChanging(int value);
-    partial void OnImageSizeChanged();
-    #endregion
-		
-		public registration()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
+		public System.Data.Linq.Table<registration> registration
 		{
 			get
 			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NChar(256) NOT NULL", CanBeNull=false)]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this.OnnameChanging(value);
-					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_major", DbType="NChar(256) NOT NULL", CanBeNull=false)]
-		public string major
-		{
-			get
-			{
-				return this._major;
-			}
-			set
-			{
-				if ((this._major != value))
-				{
-					this.OnmajorChanging(value);
-					this.SendPropertyChanging();
-					this._major = value;
-					this.SendPropertyChanged("major");
-					this.OnmajorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_promise", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string promise
-		{
-			get
-			{
-				return this._promise;
-			}
-			set
-			{
-				if ((this._promise != value))
-				{
-					this.OnpromiseChanging(value);
-					this.SendPropertyChanging();
-					this._promise = value;
-					this.SendPropertyChanged("promise");
-					this.OnpromiseChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_count", DbType="Int")]
-		public System.Nullable<int> count
-		{
-			get
-			{
-				return this._count;
-			}
-			set
-			{
-				if ((this._count != value))
-				{
-					this.OncountChanging(value);
-					this.SendPropertyChanging();
-					this._count = value;
-					this.SendPropertyChanged("count");
-					this.OncountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageFile", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary ImageFile
-		{
-			get
-			{
-				return this._ImageFile;
-			}
-			set
-			{
-				if ((this._ImageFile != value))
-				{
-					this.OnImageFileChanging(value);
-					this.SendPropertyChanging();
-					this._ImageFile = value;
-					this.SendPropertyChanged("ImageFile");
-					this.OnImageFileChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageSize", DbType="Int NOT NULL")]
-		public int ImageSize
-		{
-			get
-			{
-				return this._ImageSize;
-			}
-			set
-			{
-				if ((this._ImageSize != value))
-				{
-					this.OnImageSizeChanging(value);
-					this.SendPropertyChanging();
-					this._ImageSize = value;
-					this.SendPropertyChanged("ImageSize");
-					this.OnImageSizeChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<registration>();
 			}
 		}
 	}
@@ -669,6 +463,260 @@ namespace metoo.Models
 					this._key = value;
 					this.SendPropertyChanged("key");
 					this.OnkeyChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.registration")]
+	public partial class registration : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _name;
+		
+		private string _major;
+		
+		private string _promise1;
+		
+		private string _promise2;
+		
+		private string _promise3;
+		
+		private System.Nullable<int> _count;
+		
+		private System.Data.Linq.Binary _ImageFile;
+		
+		private System.Nullable<int> _ImageSize;
+		
+    #region 확장성 메서드 정의
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnmajorChanging(string value);
+    partial void OnmajorChanged();
+    partial void Onpromise1Changing(string value);
+    partial void Onpromise1Changed();
+    partial void Onpromise2Changing(string value);
+    partial void Onpromise2Changed();
+    partial void Onpromise3Changing(string value);
+    partial void Onpromise3Changed();
+    partial void OncountChanging(System.Nullable<int> value);
+    partial void OncountChanged();
+    partial void OnImageFileChanging(System.Data.Linq.Binary value);
+    partial void OnImageFileChanged();
+    partial void OnImageSizeChanging(System.Nullable<int> value);
+    partial void OnImageSizeChanged();
+    #endregion
+		
+		public registration()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NChar(256) NOT NULL", CanBeNull=false)]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_major", DbType="NChar(256) NOT NULL", CanBeNull=false)]
+		public string major
+		{
+			get
+			{
+				return this._major;
+			}
+			set
+			{
+				if ((this._major != value))
+				{
+					this.OnmajorChanging(value);
+					this.SendPropertyChanging();
+					this._major = value;
+					this.SendPropertyChanged("major");
+					this.OnmajorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_promise1", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string promise1
+		{
+			get
+			{
+				return this._promise1;
+			}
+			set
+			{
+				if ((this._promise1 != value))
+				{
+					this.Onpromise1Changing(value);
+					this.SendPropertyChanging();
+					this._promise1 = value;
+					this.SendPropertyChanged("promise1");
+					this.Onpromise1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_promise2", DbType="NVarChar(MAX)")]
+		public string promise2
+		{
+			get
+			{
+				return this._promise2;
+			}
+			set
+			{
+				if ((this._promise2 != value))
+				{
+					this.Onpromise2Changing(value);
+					this.SendPropertyChanging();
+					this._promise2 = value;
+					this.SendPropertyChanged("promise2");
+					this.Onpromise2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_promise3", DbType="NVarChar(MAX)")]
+		public string promise3
+		{
+			get
+			{
+				return this._promise3;
+			}
+			set
+			{
+				if ((this._promise3 != value))
+				{
+					this.Onpromise3Changing(value);
+					this.SendPropertyChanging();
+					this._promise3 = value;
+					this.SendPropertyChanged("promise3");
+					this.Onpromise3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_count", DbType="Int")]
+		public System.Nullable<int> count
+		{
+			get
+			{
+				return this._count;
+			}
+			set
+			{
+				if ((this._count != value))
+				{
+					this.OncountChanging(value);
+					this.SendPropertyChanging();
+					this._count = value;
+					this.SendPropertyChanged("count");
+					this.OncountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageFile", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary ImageFile
+		{
+			get
+			{
+				return this._ImageFile;
+			}
+			set
+			{
+				if ((this._ImageFile != value))
+				{
+					this.OnImageFileChanging(value);
+					this.SendPropertyChanging();
+					this._ImageFile = value;
+					this.SendPropertyChanged("ImageFile");
+					this.OnImageFileChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageSize", DbType="Int")]
+		public System.Nullable<int> ImageSize
+		{
+			get
+			{
+				return this._ImageSize;
+			}
+			set
+			{
+				if ((this._ImageSize != value))
+				{
+					this.OnImageSizeChanging(value);
+					this.SendPropertyChanging();
+					this._ImageSize = value;
+					this.SendPropertyChanged("ImageSize");
+					this.OnImageSizeChanged();
 				}
 			}
 		}

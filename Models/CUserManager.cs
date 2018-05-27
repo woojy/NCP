@@ -26,7 +26,9 @@ namespace metoo.Models
                 CUser tmpUser = new CUser();
                 tmpUser.name = iter.name;
                 tmpUser.major = iter.major;
-                tmpUser.promise = iter.promise;
+                tmpUser.promise1 = iter.promise1;
+                tmpUser.promise2 = iter.promise2;
+                tmpUser.promise3 = iter.promise3; 
                 resUsers.Add(tmpUser);
             }
             return resUsers;
@@ -36,7 +38,9 @@ namespace metoo.Models
             registration tmpUser = new registration();
             tmpUser.name = aUser.name;
             tmpUser.major = aUser.major;
-            tmpUser.promise = aUser.promise;
+            tmpUser.promise1 = aUser.promise1;
+            tmpUser.promise2 = aUser.promise2;
+            tmpUser.promise3 = aUser.promise3;
 
             theUserContext.registration.InsertOnSubmit(tmpUser);
             theUserContext.SubmitChanges();
