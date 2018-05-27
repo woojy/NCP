@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="metoo" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.96.124.87,1433;Initial Catalog=metoo;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="metooConnectionString3" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.password" Member="password">
+    <Type Name="password">
+      <Column Name="pw" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.registration" Member="registration">
+    <Type Name="registration">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="major" Type="System.String" DbType="NChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="promise" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImageFile" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ImageSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.student" Member="student">
+    <Type Name="student">
+      <Column Name="c11" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c12" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c13" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c14" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c15" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c16" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c21" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c22" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c23" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c24" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c25" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c26" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c31" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c32" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c33" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c34" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c35" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="c36" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

@@ -16,6 +16,11 @@ namespace metoo.Controllers
 
         public ActionResult Admin()
         {
+
+            return (View());
+        }
+        public ActionResult Login()
+        {
             return (View());
         }
 
