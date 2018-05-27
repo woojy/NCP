@@ -9,21 +9,42 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-
-    <link rel="stylesheet" href="~/StyleSheet1.css"/>
-
+    <link rel="stylesheet" href="~/StyleSheet1.css" />
+    <script>
+        function checkID() {
+            var id = document.getElementById("id").value;
+            if (id == "1234") {
+                document.login.action = "Admin";
+                document.login.submit();
+                alert("관리자 모드입니다.");
+            }
+            /*else if () {
+             * password db 써야해용...
+                document.login.action = "Vote";
+                document.login.submit();
+                alert("투표화면입니다.");
+            }*/
+            else {
+                alert("key를 다시 확인해주세요");
+            }
+        }
+    </script>
 </head>
 <body>
-    <table>
-        <tr class="link">
-            <td>@Html.ActionLink("관리자페이지", "Login")</td>
-            <td> | </td>
-            <td>@Html.ActionLink("투표하러가기", "Vote")</td>
-        </tr>
-    </table>
-
     <p>나도 투표할래 Me too! 사이트에 오신걸 환영합니다.</p>
-    투표하기 버튼을 누르면 투표하는 창으로 이동합니다.
-
+    <p>KEY 값에 따라 관리자페이지/ 투표하기 페이지로 이동됩니다.</p>
+    <form id="login" name="login" method="post">
+        <table class="IndexTable">
+            <tr>
+                <td><input type="text" id="id" name="id" placeholder="KEY" /></td>
+                
+            </tr>
+            <tr>
+                <td>
+                <input type="button" class="buttonInput" value="확인" onclick="checkID()" />
+                </td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>

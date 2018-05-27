@@ -23,57 +23,49 @@ namespace metoo.Models
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="metoo")]
-	public partial class DatabaseDataContext : System.Data.Linq.DataContext
+	public partial class MetooDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
     #region 확장성 메서드 정의
     partial void OnCreated();
-    partial void Insertpassword(password instance);
-    partial void Updatepassword(password instance);
-    partial void Deletepassword(password instance);
     partial void Insertregistration(registration instance);
     partial void Updateregistration(registration instance);
     partial void Deleteregistration(registration instance);
+    partial void Insertpassword(password instance);
+    partial void Updatepassword(password instance);
+    partial void Deletepassword(password instance);
     #endregion
 		
-		public DatabaseDataContext() : 
+		public MetooDataContext() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["metooConnectionString3"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DatabaseDataContext(string connection) : 
+		public MetooDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DatabaseDataContext(System.Data.IDbConnection connection) : 
+		public MetooDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DatabaseDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public MetooDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DatabaseDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public MetooDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<password> password
-		{
-			get
-			{
-				return this.GetTable<password>();
-			}
 		}
 		
 		public System.Data.Linq.Table<registration> registration
@@ -91,66 +83,12 @@ namespace metoo.Models
 				return this.GetTable<student>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.password")]
-	public partial class password : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _pw;
-		
-    #region 확장성 메서드 정의
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnpwChanging(int value);
-    partial void OnpwChanged();
-    #endregion
-		
-		public password()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pw", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int pw
+		public System.Data.Linq.Table<password> password
 		{
 			get
 			{
-				return this._pw;
-			}
-			set
-			{
-				if ((this._pw != value))
-				{
-					this.OnpwChanging(value);
-					this.SendPropertyChanging();
-					this._pw = value;
-					this.SendPropertyChanged("pw");
-					this.OnpwChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<password>();
 			}
 		}
 	}
@@ -690,6 +628,68 @@ namespace metoo.Models
 				{
 					this._c36 = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.password")]
+	public partial class password : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _key;
+		
+    #region 확장성 메서드 정의
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnkeyChanging(string value);
+    partial void OnkeyChanged();
+    #endregion
+		
+		public password()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[key]", Storage="_key", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string key
+		{
+			get
+			{
+				return this._key;
+			}
+			set
+			{
+				if ((this._key != value))
+				{
+					this.OnkeyChanging(value);
+					this.SendPropertyChanging();
+					this._key = value;
+					this.SendPropertyChanged("key");
+					this.OnkeyChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

@@ -7,19 +7,48 @@
     vertical-align:middle;
 }
 /* 테이블을 이용하여 가운데 정렬?*/
-.CheckTable, .AdminTable {
+.CheckTable, .AdminTable{
+    width: 400px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.IndexTable {
     width: 400px;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
 }
 
+.CheckTable input {
+    border-radius: 20px;
+    border: 2px solid #3A5570;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+}
+.buttonInput {
+    border-radius: 20px;
+    border: 2px solid #3A5570;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+}
 input {
     border-radius: 20px;
     border: 2px solid #3A5570;
-    width:100px;
-    height:30px;
-    text-align:center;
+    width: 400px;
+    height: 30px;
+    text-align: center;
+}
+
+
+.keyInput {
+    border-radius: 20px;
+    border: 2px solid #3A5570;
+    width: 400px;
+    height: 30px;
+    text-align: center;
 }
 .box1 {
     width: 300px;
@@ -27,7 +56,7 @@ input {
     border-radius: 20px;
     margin: 10px;
     line-height: 50px;
-    border:2px solid #3A5570;
+    border: 2px solid #3A5570;
 }
 
 /*a 속성 폰트 색깔 나중에는 흰색으로 바꾸자*/

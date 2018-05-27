@@ -91,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Views\Home\css\StyleSheet1.css" />
+    <Content Include="StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -100,23 +100,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Registration.cs" />
-    <Compile Include="Models\Database.designer.cs">
+    <Compile Include="Models\CInstance.cs" />
+    <Compile Include="Models\CUser.cs" />
+    <Compile Include="Models\CUserManager.cs" />
+    <Compile Include="Models\Metoo.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Database.dbml</DependentUpon>
+      <DependentUpon>Metoo.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="Models\Database.dbml">
+    <Content Include="Models\Metoo.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Database.designer.cs</LastGenOutput>
+      <LastGenOutput>Metoo.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Models\Database.dbml.layout">
-      <DependentUpon>Database.dbml</DependentUpon>
+    <None Include="Models\Metoo.dbml.layout">
+      <DependentUpon>Metoo.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -128,6 +130,7 @@
     <Content Include="Views\Home\Vote.cshtml" />
     <Content Include="Views\Home\Check.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\JoinOK.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -137,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Home\css\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

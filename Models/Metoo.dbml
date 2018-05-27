@@ -1,10 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="metoo" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="metoo" Class="MetooDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=10.96.124.87,1433;Initial Catalog=metoo;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="metooConnectionString3" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.password" Member="password">
-    <Type Name="password">
-      <Column Name="pw" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.registration" Member="registration">
     <Type Name="registration">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -36,6 +31,11 @@
       <Column Name="c34" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="c35" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="c36" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.password" Member="password">
+    <Type Name="password">
+      <Column Name="[key]" Member="key" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

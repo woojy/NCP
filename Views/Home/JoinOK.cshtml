@@ -1,0 +1,26 @@
+﻿@model metoo.Models.CUser
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>JoinOK</title>
+    <link rel="stylesheet" href="~/StyleSheet1.css" />
+</head>
+<body>
+    <div>
+        <p>@ViewBag.name 님의 정보가 등록되었습니다.</p>
+
+        <p>정보확입니다</p><br />
+        <p> 이름 : @Model.name </p><br />
+        <p> 학과 : @Model.major </p><br />
+        <p> 공약 : @Model.promise</p><br />
+        <a href="@Url.Action("","")">Home</a>
+    </div>
+</body>
+</html>

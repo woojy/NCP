@@ -1,7 +1,7 @@
 ﻿
 @{
     Layout = null;
-    
+
 }
 
 <!DOCTYPE html>
@@ -14,14 +14,29 @@
 
 </head>
 <body>
-    <div> 
-        암호키를 발급받는 곳입니다.<br />
-        버튼을 누르면 암호키가 생성됩니다.
-    </div>
-    @{ 
-        Random rand = new Random();
-        
-    }
-    
+    <body>
+        <div>
+            암호키를 발급받는 곳입니다.<br />
+            버튼을 누르면 암호키가 생성됩니다.<br />
+            <input type="text" id="pw" name="pw">
+            <input type="button" value="생성" onclick="process()">
+        </div>
+        @{
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[20];
+            var random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+            var finalString = new String(stringChars);
+        }
+        <script>
+        function process() {
+            document.getElementById("pw").value="@finalString";
+        }
+        </script>
+    </body>
 </body>
 </html>

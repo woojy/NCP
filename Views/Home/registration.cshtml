@@ -1,4 +1,4 @@
-﻿@model metoo.Models.Registration
+﻿@model metoo.Models.CUser
 
 @{
     Layout = null;
@@ -9,22 +9,36 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>registration</title>
+    <title>후보등록</title>
     <link rel="stylesheet" href="~/StyleSheet1.css" />
-
 </head>
 <body>
     <div>
-        후보를 등록하는 공간
+        <h2>
+            <a href="@Url.Action("index", "Home")">
+                홈으로 돌아가기
+            </a>
+        </h2>
+        @using (Html.BeginForm("Registration", "Home"))
+        {
+
+            <table class="AdminTable">
+                <tr>
+                    <td>이름</td>
+                    <td>@Html.TextBoxFor(x => x.name, new { size = "20" })</td>
+                </tr>
+                <tr>
+                    <td>학과</td>
+                    <td>@Html.TextBoxFor(x => x.major, new { })</td>
+                </tr>
+                <tr>
+                    <td>공약</td>
+                    <td>@Html.TextBoxFor(x => x.promise, new { })</td>
+                </tr>
+            </table>
+            <input type="submit" class="buttonInput" name="name" value="등록하기" />
+            <!--<h2><a href="@Url.Action("","")">HOME</a></h2>-->
+        }
     </div>
-
-    <table class="CheckTable">
-        <tr>
-            <td>학생의 이름을 입력하세요</td>
-            <td></td>
-        </tr>
-        <tr></tr>
-
-    </table>
 </body>
 </html>
